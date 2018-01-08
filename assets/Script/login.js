@@ -9,7 +9,7 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
         this.init();
-        alert(1);
+       
     },
     init:function(){
 

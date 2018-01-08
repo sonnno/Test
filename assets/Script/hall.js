@@ -17,8 +17,8 @@ cc.Class({
     },
 
     init:function(){
-        Globals.loginMgr.initOprationHandler();
-        Globals.gameMgr.initOprationHandler();
+        Globals.LoginMgr.initOprationHandler();
+        Globals.GameMgr.initOprationHandler();
 
         this.reWriteLoginServerCallback();
         this.reWriteGameServerCallback();
