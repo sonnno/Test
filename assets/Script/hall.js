@@ -98,8 +98,6 @@ cc.Class({
     handleNoticeFinish: function (data) {
 
     },
-
-
     goToGameScene: function () {
         cc.find("utilsNode").getComponent("utilsNode").hideLoadingNode();
 
