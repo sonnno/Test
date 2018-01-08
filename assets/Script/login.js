@@ -14,6 +14,7 @@ cc.Class({
 
         Globals.LoginMgr.initOprationHandler();
         this.reWriteLoginServerCallBack();
+        alert(1);
     },
     onLoginBtnClick: function() {
         var accountName = this.accountEbox.string;
