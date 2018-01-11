@@ -100,7 +100,7 @@ cc.Class({
     //创建游戏进入
     onCreateRoomBtnClick(){
         
-        //cc.find("utilsNode").getComponent("utilsNode").showLoadindNode();
+        cc.find("utilsNode").getComponent("utilsNode").showLoadingNode();
 
         for(var i=0;i<Globals.netInfo.gameServerList.length;i++){
             var serverData = Globals.netInfo.gameServerList[i];
