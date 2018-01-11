@@ -83,6 +83,9 @@ var LoginMgr = cc.Class({
         this.handleLoginFinish = function(data){};
 
         this.handleLoginReplace = function(data){};
+
+        this.handleUserData = function(data){};
+
     },
 
     setDataHandler:function(){
@@ -145,6 +148,88 @@ var LoginMgr = cc.Class({
 
         }
     },
+    handleUserServiceData: function(data){
+        var self = this;
+        
+        var info = {}
+        if(data.array){
+            info = data.array[0];
+        }
+        
+        switch(data.SubCmdID){
+            case 900:
+                this.handleOperateSuccess(info);
+                break
+            case 902:
+                this.handleOperateResult(info);
+                break    
+            case 1251:
+                this.handleBetRecordInfo(info);
+                break;
+            case 1252:
+                this.handleBetRecordFinish(info);
+                break;
+            case 1254:
+                this.handleRewardRecordInfo(info);
+                break;
+            case 1255:
+                this.handleRewardRecordFinish(info);
+                break;  
+            case 1257:
+                this.handleWinRecordInfo(info);
+                break;
+            case 1258:
+                this.handleWinRecordFinish(info);
+                break;
+            case 1260:
+                this.handleRankData(info);
+                break;
+            case 1262:
+                this.handleUserData(info);
+                break;
+            case 1264:
+                this.handleWithDrawResult(info);
+                break;
+            case 1266:
+                this.handleNoticeInfo(info);
+                break;  
+            case 1267:
+                this.handleNoticeFinish(info);
+                break;
+            case 1269:
+                this.handleAddUserResultInfo(info);
+                break;
+            case 1271:
+                this.handleTargetJuniorInfo(info);
+                break;
+            case 1274:
+                this.handleJuniorsInfo(info);
+                break;
+            case 1275:
+                this.handleJuniorsInfoFinish(info);
+                break;
+            case 1277:
+                this.handleAddBankCardResult(info);
+                break;
+            case 1279:
+                this.handleBankInfoData(info);
+                break;
+            case 1281:
+                this.handleTransferScoreResult(info);
+                break;
+            case 1284:
+                this.handleWithDrawRecordData(info);
+                break;
+            case 1285:
+                this.handleWithDrawRecordDataFinish(info);
+                break;
+            default: 
+                cc.log("no use sumid"+data.SubCmdID);
+                break; 
+        }        
+    },
+
+    
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {
 

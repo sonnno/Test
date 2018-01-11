@@ -1,6 +1,6 @@
 
 window.GAME_OPTION = {
-    TWO_EIGHT_ID:114,
+    TWO_EIGHT_ID:105,
 
 };
 

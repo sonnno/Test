@@ -94,7 +94,7 @@ var Net = cc.Class({
     handleClose: function () {
 
         this.ws = null;
-        cc.find("utilsNode").getComponent("UtilsNode").hideLoadingNode();
+        cc.find("utilsNode").getComponent("utilsNode").hideLoadingNode();
     },
 
 

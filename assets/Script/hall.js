@@ -23,10 +23,10 @@ cc.Class({
         this.reWriteLoginServerCallback();
         this.reWriteGameServerCallback();
 
-        Globals.gameMgr.net.closeWS();
+        Globals.GameMgr.net.closeWS();
     },
     start:function(){
-        Globals.loginMgr.requestNoticeInfo();
+        Globals.LoginMgr.requestNoticeInfo();
 
     },
 
@@ -34,15 +34,15 @@ cc.Class({
     reWriteLoginServerCallback: function () {
         var self = this;
 
-        Globals.loginMgr.handleUserData = function (data) {//
+        Globals.LoginMgr.handleUserData = function (data) {//
             self.handleUserData(data);
         }
 
-        Globals.loginMgr.handleNoticeInfo = function (data) {//
+        Globals.LoginMgr.handleNoticeInfo = function (data) {//
             self.handleNoticeInfo(data);
         }
 
-        Globals.loginMgr.handleNoticeFinish = function (data) {//
+        Globals.LoginMgr.handleNoticeFinish = function (data) {//
             self.handleNoticeFinish(data);
         }
 
@@ -51,28 +51,29 @@ cc.Class({
     reWriteGameServerCallback: function () {
         var self = this;
 
-        Globals.gameMgr.handleLoginFail = function (data) {//登陆失败
+        Globals.GameMgr.handleLoginFail = function (data) {//登陆失败
             self.handleLoginFail(data);
         }
 
-        Globals.gameMgr.handleLoginFinish = function (data) {//登陆完成
+        Globals.GameMgr.handleLoginFinish = function (data) {//登陆完成
             self.handleLoginFinish(data);
         }
 
-        Globals.gameMgr.handleUserIn = function (data) {//用户进入
+        Globals.GameMgr.handleUserIn = function (data) {//用户进入
             self.handleUserIn(data);
         }
 
-        Globals.gameMgr.handleUserStatusChange = function (data) {//用户状态改变
+        Globals.GameMgr.handleUserStatusChange = function (data) {//用户状态改变
             self.handleUserStatusChange(data);
         }
     },
 
     handleLoginFail: function (data) {
-        cc.find("utilsNode").getComponent("UtilsNode").hideLoadingNode();
+        cc.find("utilsNode").getComponent("utilsNode").hideLoadingNode();
+        cc.log(data);
     },
     handleLoginFinish: function (data) {
-
+        cc.log(data);
         this.goToGameScene();
     },
     handleUserIn: function (data) {
@@ -101,8 +102,8 @@ cc.Class({
     goToGameScene: function () {
         cc.find("utilsNode").getComponent("utilsNode").hideLoadingNode();
 
-            cc.director.preloadScene("twoEigth", function () {
-                cc.director.loadScene("twoEigth");
+            cc.director.preloadScene("twoEight", function () {
+                cc.director.loadScene("twoEight");
             });
         
     },

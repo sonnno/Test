@@ -5,6 +5,7 @@ var GameMgr = cc.Class({
     },
 
     init: function(){
+        this.net = new Net();
         this.net.init();
         this.initOprationHandler();
         this.setDataHandler();
@@ -36,7 +37,7 @@ var GameMgr = cc.Class({
             dwUserID: parseInt(Globals.userInfo.userID),
             szPassword: Globals.userInfo.password,
             szMachineID: "123123",
-            wKindID: 114
+            wKindID: 105
         };
 
         this.sendData(1, 1, data);

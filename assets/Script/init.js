@@ -1,4 +1,5 @@
 var LoginMgr=require("LoginMgr");
+var GameMgr = require("GameMgr");
 
 cc.Class({
     extends: cc.Component,
@@ -32,6 +33,9 @@ cc.Class({
     initNetMgr:function(){
         Globals.LoginMgr = new LoginMgr();
         Globals.LoginMgr.init();
+
+        Globals.GameMgr = new GameMgr();
+        Globals.GameMgr.init();
     },
     goToLoginScene:function(){
 

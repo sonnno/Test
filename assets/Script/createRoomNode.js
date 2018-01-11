@@ -99,16 +99,17 @@ cc.Class({
     },
     //创建游戏进入
     onCreateRoomBtnClick(){
-        cc.find("utilsNode").getComponent("utilsNode").showLoadindNode();
+        
+        //cc.find("utilsNode").getComponent("utilsNode").showLoadindNode();
 
         for(var i=0;i<Globals.netInfo.gameServerList.length;i++){
             var serverData = Globals.netInfo.gameServerList[i];
-            if(serverData.wKindID == GAME_OPTION.TWO_EIGTH_ID){
+            if(serverData.wKindID == GAME_OPTION.TWO_EIGHT_ID){
                 var ip = serverData.szServerAddr;
                 var port = serverData.wServerPort;
-                Globals.gameMgr.net.setNetOption(ip, port, "tLgame");
+                Globals.GameMgr.net.setNetOption(ip, port, "tLgame");
 
-                Globals.gameMgr.requestLogin();
+                Globals.GameMgr.requestLogin();
                 break;
             }
         }

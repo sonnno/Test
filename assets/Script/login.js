@@ -14,6 +14,7 @@ cc.Class({
     init:function(){
 
         Globals.LoginMgr.initOprationHandler();
+        Globals.GameMgr.initOprationHandler();
         this.reWriteLoginServerCallBack();
     
     },
@@ -41,14 +42,14 @@ cc.Class({
     handleLoginSuccess:function(data){
         cc.log("登录成功");
         Globals.userInfo.account = data.szAccounts;
-        Globals.userInfo.password = this.passwordEBox.string;
+        Globals.userInfo.password = this.passwordEbox.string;
         Globals.userInfo.nickName = data.szNickName;
         Globals.userInfo.userID = data.dwUserID;
         Globals.userInfo.score = data.lUserScore;
         Globals.userInfo.rebate = data.dbCommissionScale;
 
         cc.sys.localStorage.setItem("account", data.szAccounts);
-        cc.sys.localStorage.setItem("password", this.passwordEBox.string);
+        cc.sys.localStorage.setItem("password", this.passwordEbox.string);
     },
     handleLoginFinish:function(data){
         cc.log("登录完成");
